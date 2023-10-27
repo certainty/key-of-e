@@ -38,7 +38,9 @@
   :components ((:file "packages")
                (:file "suites"))
 
-  :perform (test-op (o c) (uiop:symbol-call :clunit :run-suite 'key-of-e.server.tests::server-suite  :report-progress nil)))
+  :perform (test-op (o c)
+                    (declare (ignore o c))
+                    (uiop:symbol-call :key-of-e.server.tests :run-ci)))
 
 
 (asdf:defsystem "key-of-e/client"
@@ -69,5 +71,6 @@
   :serial t
   :components ((:file "packages")
                (:file "suites"))
-
-  :perform (test-op (o c) (uiop:symbol-call :clunit :run-suite 'key-of-e.client.tests::client-suite  :report-progress nil)))
+  :perform (test-op (o c)
+                    (declare (ignore o c))
+                    (uiop:symbol-call :key-of-e.client.tests :run-ci)))
