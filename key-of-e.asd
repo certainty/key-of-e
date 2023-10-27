@@ -20,8 +20,7 @@
                :closer-mop
                :log4cl
 
-               :fast-io
-               )
+               :fast-io)
 
   :pathname "src/server"
   :serial t

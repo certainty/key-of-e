@@ -37,6 +37,7 @@ jobs:
         shell: bash
         run: |
           ln -s $(pwd) ~/.roswell/lisp/quicklisp/local-projects/key-of-e
+          ros -e '(progn (ql:register-local-projecst) (uiop:quit))'
           ros -e '(progn (ql:quickload :clunit2) (uiop:quit))'
           ros -e '(progn (ql:quickload :key-of-e) (uiop:quit))'
 
