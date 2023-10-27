@@ -20,11 +20,15 @@
                :closer-mop
                :log4cl
 
-               :fast-io)
+               :fast-io
+               :flexi-streams
+               :cl-skip-list)
 
   :pathname "src/server"
   :serial t
-  :components ((:file "packages")))
+  :components ((:file "packages")
+               (:file "kv")
+               (:file "engine")))
 
 (asdf:defsystem "key-of-e/server/tests"
   :description "Unit tests for the key-of-e server"
